@@ -1,0 +1,11 @@
+﻿@model string[]
+@{
+    ViewBag.Title = "Debug";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Debug</h2>
+@foreach (string str in Model)
+{
+    @Html.Label(str); <br />
+}

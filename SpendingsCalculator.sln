@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpendingsCalculator", "SpendingsCalculator.csproj", "{3830BBD9-3AE8-449F-9375-AA1135B46163}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpendingsCalculator.Tests", "..\SpendingsCalculator.Tests\SpendingsCalculator.Tests.csproj", "{0AB2163E-ADFE-4803-907D-18D4DFF93C60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3830BBD9-3AE8-449F-9375-AA1135B46163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3830BBD9-3AE8-449F-9375-AA1135B46163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3830BBD9-3AE8-449F-9375-AA1135B46163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3830BBD9-3AE8-449F-9375-AA1135B46163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AB2163E-ADFE-4803-907D-18D4DFF93C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB2163E-ADFE-4803-907D-18D4DFF93C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB2163E-ADFE-4803-907D-18D4DFF93C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB2163E-ADFE-4803-907D-18D4DFF93C60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCA5355E-424B-4BDD-947D-8B3DF4BBC6C9}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿@model SpendingsCalculator.Models.Calculator_ViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Calculate</h2>
+
+<form action="/Calculator/Calculate" method="post">
+    Start Date: <input type="date" name="begin" required /> <br />
+    End Date: <input type="date" name="end" required /> <br />
+    <hr />
+    Categorys: <br />
+    <textarea name="categorys" required title="<ID>, <Title>, <Description>"></textarea> <br />
+    Products: <br />
+    <textarea name="products" required title="<ID>, <Title>, <Quantity>, <Price>, <Category[1]>, ..., <Category[n]>"></textarea> <br />
+    Conditions: (<code title="Yearly, <ID>, <Date[1] {day.month}>, ..., <Date[n] {day.month}>">Yearly</code>, <code title="Monthly, <ID>, <Day[1]>, <Day[n]>">Monthly</code>, <code title="Weekly, <ID>, <Day[1]>, <Day[n]>">Weekly</code>, <code title="Cycly, <ID>, <Start date {day.month.year}>, <Spending>, <Waiting>">Cycly</code>, <code title="Complex, <ID>, <Left|!Left>, <OR|AND>, <Right|!Right>">Complex</code>)<br />
+    <textarea name="conditions" required title="<Type>, <ID>, <Argument[1]>, ..., <Argument[n]>"></textarea> <br />
+    <hr />
+    Spendings: <br />
+    <textarea name="spendings" required title="<ID>, <Title>, <Description>, <Condiction ID>, <Product[1] ID>, ..., <Product[n] ID>"></textarea> <br />
+    <hr />
+    <input type="submit" value="Calculate" />
+</form>
+

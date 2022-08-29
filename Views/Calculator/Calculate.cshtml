@@ -1,0 +1,73 @@
+﻿@model SpendingsCalculator.Models.CalculatingResult
+@using System.Web
+@{
+    ViewBag.Title = "Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Result</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ПН</th>
+            <th>ВТ</th>
+            <th>СР</th>
+            <th>ЧТ</th>
+            <th>ПТ</th>
+            <th>СБ</th>
+            <th>ВС</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @{int day_ind = 0; }
+            @for (int skip = 0; skip < (Model.Days[0].Date.DayOfWeek == DayOfWeek.Sunday ? 6 : (int)Model.Days[0].Date.DayOfWeek) - 1; skip++)
+            {
+                <td style="width: 10em; height: 15em; vertical-align: -webkit-baseline-middle;"></td>
+            }
+            @for (; day_ind < Model.Days.Count; day_ind++)
+            {
+                var day = Model.Days[day_ind];
+                <td style="width: 10em; height: 15em; vertical-align: -webkit-baseline-middle;">
+                    @Html.Label($"{day.Date.Day} {day.Date.Month} {day.Date.Year}")
+                    <br />
+                    @foreach (var spending in day.Spendings)
+                    {
+                        @Html.Label(spending.Title)
+                        <br />
+                    }
+                    @Html.Label(day.Total_Amount.ToString())
+                </td>
+                if (day.Date.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    day_ind++;
+                    break;
+                }
+            }
+        </tr>
+        @while (day_ind < Model.Days.Count)
+        {
+            <tr>
+                @for (int week_day = 0; week_day < 7 && day_ind < Model.Days.Count; week_day++, day_ind++)
+                {
+                    var day = Model.Days[day_ind];
+                    <td style="width: 10em; height: 15em; vertical-align: -webkit-baseline-middle;">
+                        @Html.Label($"{day.Date.Day} {day.Date.Month} {day.Date.Year}")
+                        <br />
+                        @foreach (var spending in day.Spendings)
+                        {
+                            @Html.Label(spending.Title)
+                            <br />
+                        }
+                        @Html.Label(day.Total_Amount.ToString())
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<h2>Total: @Html.Raw($"{Model.Total_Amount,2}")</h2>
+
